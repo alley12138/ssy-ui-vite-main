@@ -1,0 +1,4 @@
+{
+  "unocss.autocomplete.matchType": "fuzzy" // unocss 模糊匹配
+
+}
