@@ -3,7 +3,7 @@
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import { defineConfig } from 'vite'
-import Unocss from './config/unocss'
+import Unocss from 'unocss/vite';
 
 const rollupOptions = {
   external: ['vue'],
