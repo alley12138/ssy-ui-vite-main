@@ -7,6 +7,7 @@
   "license": "ISC",
   "keywords": [],
   "main": "index.js",
+  "files": ["dist"],
   "scripts": {
     "test": "vitest",
     "dev": "vite",
