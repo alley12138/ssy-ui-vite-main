@@ -11,6 +11,9 @@
 <P align="center">
 <img src="./assets/187.png">
 </p>
+<p>
+<img src="https://img.shields.io/github/license/alley12138/ssy-ui-vite-main">
+</p>
 
 ## Features
  - 基于 Vue 框架
