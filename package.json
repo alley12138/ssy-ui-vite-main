@@ -1,11 +1,11 @@
 {
   "name": "zyd-ssy-ui-vite",
-  "homepage": "https://ssy-ui-vite-main-lf45.vercel.app/",
   "type": "module",
   "version": "1.0.1",
   "description": "",
   "author": "",
   "license": "ISC",
+  "homepage": "https://ssy-ui-vite-main-lf45.vercel.app/",
   "keywords": [],
   "exports": {
     ".": {
