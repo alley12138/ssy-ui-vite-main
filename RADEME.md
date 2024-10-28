@@ -9,7 +9,7 @@
 </p>
 
 <P align="center">
-< img src="./assets/187.png">
+<img src="./assets/187.png">
 </p>
 
 ## Features
