@@ -8,7 +8,7 @@
   基于 Vite 栈的前端工程化实践
 </p>
 
-<P align="center"?
+<P align="center">
 < img src="./assets/187.png">
 </p>
 
