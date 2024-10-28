@@ -12,7 +12,7 @@
 // }
 import type { App, Plugin } from 'vue'
 
-import { Avatar } from './avatar'
+import { Avatar } from './avatar/'
 import { Button } from './button'
 import { Link } from './link'
 

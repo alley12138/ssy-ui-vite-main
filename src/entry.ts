@@ -1,6 +1,6 @@
 import type { App } from 'vue'
 import { version } from '../package.json'
-import Avatar from './avatar/Avatar.vue'
+import Avatar from './avatar'
 import SButton from './button/Button'
 import TSXButton from './TSXButton'
 import 'virtual:uno.css'
