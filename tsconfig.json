@@ -11,8 +11,16 @@
     "noUnusedParameters": true,
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "rootDir": "./src",
+    "declaration": true,
+    "declarationDir": "./dist",
+    "emitDeclarationOnly": true
   },
-  "include": ["./**/*.*", "./shims-vue.d.ts"],
-  "exclude": ["node_modules", "**/.*/"]
+  // 移除或更改这一行
+  // "extends": "./tsconfig.json",
+  "include": ["./**/*.*", "./shims-vue.d.ts", "src/**/*"],
+  "exclude": ["node_modules", "**/.*/", "**/test/**/*"]
 }
+
+

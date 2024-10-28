@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>avatar按需引入</title>
+  </head>
+
+  <body>
+    <h2>按需引入:头像组件</h2>
+    <div id="app"></div>
+    <link rel="stylesheet" href="../dist/entry.css" />
+    <script src="../node_modules/vue/dist/vue.global.js"></script>
+    <script src="../dist/avatar/index.umd.cjs"></script>
+    <script>
+      const { createApp } = Vue
+      const { Avatar } = avatar
+      console.log('SSYUI:Avatar', Avatar)
+
+      createApp({
+        template: `
+        <div style="display: flex; gap: 20px;">
+            <SAvatar size="150px" src="http://img.netbian.com/file/2024/1010/003132wNTFM.jpg" round="true"></SAvatar>
+            <SAvatar size="250px" src="http://img.netbian.com/file/2024/1010/003132wNTFM.jpg" round="true"></SAvatar>
+            <SAvatar size="350px" src="http://img.netbian.com/file/2024/1010/003132wNTFM.jpg" round="true"></SAvatar>
+        </div>
+        `,
+      })
+        .use(Avatar)
+        .mount('#app')
+    </script>
+  </body>
+</html>

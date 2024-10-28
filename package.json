@@ -1,23 +1,31 @@
 {
-  "name": "ssy-ui-vite",
+  "name": "zyd-ssy-ui-vite",
   "type": "module",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "author": "",
   "license": "ISC",
   "keywords": [],
-  "main": "index.js",
-  "files": ["dist"],
+  "main": "./dist/ssy-ui.umd.cjs",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "test": "vitest",
     "dev": "vite",
-    "build": "vite build",
+    "build": "pnpm build:components && tsc -b tsconfig.types.json",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
     "docs:serve": "vitepress serve docs",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "prepare": "husky"
+    "prepare": "husky",
+    "build:all": "vite build",
+    "build:components": "tsx ./scripts/build.ts",
+    "build": "pnpm build:components && pnpm type:build",
+    "typecheck": "vue-tsc --noEmit",
+    "type:build": "vue-tsc -b --declaration --emitDeclarationOnly tsconfig.types.json",
+    "clean:dist": "rimraf dist"
   },
   "dependencies": {
     "vue": "^3.4.38"
@@ -27,6 +35,7 @@
     "@commitlint/cli": "^19.5.0",
     "@commitlint/config-conventional": "^19.5.0",
     "@iconify-json/ic": "^1.2.1",
+    "@types/fs-extra": "^11.0.4",
     "@unocss/eslint-plugin": "^0.62.4",
     "@vitejs/plugin-vue": "^5.1.2",
     "@vitejs/plugin-vue-jsx": "^4.0.1",
@@ -35,15 +44,18 @@
     "cz-customizable": "^7.2.1",
     "eslint": "^9.11.1",
     "eslint-plugin-format": "^0.1.2",
+    "fs-extra": "^11.2.0",
     "happy-dom": "15.7.4",
     "husky": "^9.1.6",
     "terser": "5.34.1",
+    "tsx": "^4.19.1",
     "typescript": "5.5.4",
     "unocss": "^0.63.3",
     "vite": "^5.4.2",
     "vitepress": "^1.4.1",
     "vitepress-theme-demoblock": "3.0.7",
-    "vitest": "2.1.2"
+    "vitest": "2.1.2",
+    "vue-tsc": "^2.1.8"
   },
   "config": {
     "commitizen": {
@@ -52,5 +64,22 @@
     "cz-customizable": {
       "config": ".cz-config.cjs"
     }
-  }
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/entry.d.ts",
+      "import": "./dist/ssy-ui.js",
+      "require": "./dist/ssy-ui.umd.cjs"
+    },
+    "./*": "./*"
+  },
+  "module": "./dist/ssy-ui.js",
+  "types": "./dist/entry.d.ts",
+  "build:all": "vite build",
+  "build:components": "tsx ./scripts/build.ts",
+  "build": "pnpm build:components && tsc -b tsconfig.types.json"
 }
