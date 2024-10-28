@@ -3,24 +3,22 @@
     "jsx": "preserve",
     "jsxImportSource": "vue",
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "rootDir": "./src",
     "module": "ESNext",
     "moduleResolution": "Bundler",
     "strict": false,
     "noFallthroughCasesInSwitch": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "rootDir": "./src",
     "declaration": true,
     "declarationDir": "./dist",
-    "emitDeclarationOnly": true
+    "emitDeclarationOnly": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true
   },
   // 移除或更改这一行
   // "extends": "./tsconfig.json",
   "include": ["./**/*.*", "./shims-vue.d.ts", "src/**/*"],
   "exclude": ["node_modules", "**/.*/", "**/test/**/*"]
 }
-
-

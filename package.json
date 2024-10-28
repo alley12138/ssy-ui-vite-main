@@ -1,12 +1,23 @@
 {
   "name": "zyd-ssy-ui-vite",
+  "homepage": "https://ssy-ui-vite-main-lf45.vercel.app/",
   "type": "module",
   "version": "1.0.1",
   "description": "",
   "author": "",
   "license": "ISC",
   "keywords": [],
+  "exports": {
+    ".": {
+      "types": "./dist/entry.d.ts",
+      "import": "./dist/ssy-ui.js",
+      "require": "./dist/ssy-ui.umd.cjs"
+    },
+    "./*": "./*"
+  },
   "main": "./dist/ssy-ui.umd.cjs",
+  "module": "./dist/ssy-ui.js",
+  "types": "./dist/entry.d.ts",
   "files": [
     "dist"
   ],
@@ -22,7 +33,6 @@
     "prepare": "husky",
     "build:all": "vite build",
     "build:components": "tsx ./scripts/build.ts",
-    "build": "pnpm build:components && pnpm type:build",
     "typecheck": "vue-tsc --noEmit",
     "type:build": "vue-tsc -b --declaration --emitDeclarationOnly tsconfig.types.json",
     "clean:dist": "rimraf dist"
@@ -68,18 +78,6 @@
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
-  },
-  "exports": {
-    ".": {
-      "types": "./dist/entry.d.ts",
-      "import": "./dist/ssy-ui.js",
-      "require": "./dist/ssy-ui.umd.cjs"
-    },
-    "./*": "./*"
-  },
-  "module": "./dist/ssy-ui.js",
-  "types": "./dist/entry.d.ts",
-  "build:all": "vite build",
-  "build:components": "tsx ./scripts/build.ts",
-  "build": "pnpm build:components && tsc -b tsconfig.types.json"
+  }
+
 }
